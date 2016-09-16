@@ -1,0 +1,23 @@
+/*  This is where I got the sample extension files. It goes over basic file structure. 
+*/  https://developer.chrome.com/extensions/getstarted
+
+/*  Lots of tiny extensions that do different little things. Google approved open source kinda vibe. Would be great to dig in.
+*/  https://developer.chrome.com/extensions/samples
+
+/*  Event pages - for extensions listening events (typing etc.)
+*/  https://developer.chrome.com/extensions/event_pages
+
+/*  Declaring Permissions for Setup
+*/  https://developer.chrome.com/extensions/declare_permissions
+
+/*  Chrome's Javascript APIs - some really cool stuff
+*/  https://developer.chrome.com/extensions/api_index
+
+/*  Manifest file format
+*/  https://developer.chrome.com/extensions/manifest
+
+/*  Developers Guide that covers a lot, good to skim but scope too big
+*/  https://developer.chrome.com/extensions/devguide
+
+
+
