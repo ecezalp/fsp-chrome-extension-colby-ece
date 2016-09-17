@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var stopButton = document.getElementById('stop-alert');
 
   goButton.addEventListener('click', function() {
-    chrome.alarms.create("cat facts", {periodInMinutes: 0.1})
+    chrome.alarms.create("cat facts", {periodInMinutes: 0.05})
   });
 
   stopButton.addEventListener('click', function() {
@@ -11,10 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
-var url = 'http://catfacts-api.appspot.com/api/facts'
 
+var message = function(){
+  // this part is not ready, the code starting line 28 is the test for it
+  jQuery.get('http://catfacts-api.appspot.com/api/facts', function(data){
+    data.responsetext
+  })
 };
 
 chrome.alarms.onAlarm.addListener(function(alarm){
-  alert(message())
+  message()
 });
+
+
+// test for message function
+  jQuery.get('http://catfacts-api.appspot.com/api/facts', 
+    function(data, success, object){
+    return object.responseText
+    });

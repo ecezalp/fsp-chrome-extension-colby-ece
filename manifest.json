@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
   "name": "Cat Hub",
   "description": "Your oasis for everything cats",
   "version": "1.0",
@@ -10,7 +10,7 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["cat_facts.js", "jquery.js"]
+    "scripts": ["cat_facts.js"]
   },
   "permissions": [
     "alarms",
