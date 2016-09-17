@@ -10,9 +10,9 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["test.js"]
+    "scripts": ["cat_facts.js"]
   },
   "permissions": [
-    "alarms"
+    "alarms", "http://catfacts-api.appspot.com/api/facts"
   ]
 }
