@@ -1,4 +1,4 @@
-// note to Colby: this works when popup.html is being inspected on the console, but it seems to stop working whenever I get out of the console. I don't know if it is because I have some sort of pop-up blocker that I am unaware of, I disabled my adblocker and catblocker but it doesn't seem to solve the problem. Everything works perfectly when I am in the inspect console 
+// note to Colby: this works when popup.html is being inspected on the console, but it seems to stop working whenever I get out of the console. I don't know if it is because I have some sort of pop-up blocker that I am unaware of, I disabled my adblocker and catblocker but it doesn't seem to solve the problem. Everything works perfectly when I am in the inspect console. 
 
 
 document.addEventListener('DOMContentLoaded', function() {
