@@ -11,14 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+var url = 'http://catfacts-api.appspot.com/api/facts'
 
-var message = function(){
-  return "hello"
-  // $.ajax({
-  //   url: 'http://catfacts-api.appspot.com/api/facts',
-  //   method: 'GET',
-  //   success: "hello"
-  // });
 };
 
 chrome.alarms.onAlarm.addListener(function(alarm){
