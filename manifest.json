@@ -1,15 +1,18 @@
 {
   "manifest_version": 2,
 
-  "name": "Colby & Ece's Extension",
-  "description": "Testing out javascript Chrome extension",
+  "name": "Cat Hub",
+  "description": "Your oasis for everything cats",
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "/sample-extension/sample_icon.png",
+    "default_icon": "extension_icon.png",
     "default_popup": "popup.html"
   },
+  "background": {
+    "scripts": ["test.js"]
+  },
   "permissions": [
-
+    "alarms"
   ]
 }
