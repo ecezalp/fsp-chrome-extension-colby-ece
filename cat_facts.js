@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   var goButton = document.getElementById('get-alert');
   var stopButton = document.getElementById('stop-alert');
+  
 
   goButton.addEventListener('click', function() {
-    chrome.alarms.create("cat facts", {periodInMinutes: 0.05})
+    chrome.alarms.create("cat facts", {periodInMinutes: 0.08})
   });
 
   stopButton.addEventListener('click', function() {
@@ -12,20 +13,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-var message = function(){
-  // this part is not ready, the code starting line 28 is the test for it
-  jQuery.get('http://catfacts-api.appspot.com/api/facts', function(data){
-    data.responsetext
-  })
+var obj = $.get('http://catfacts-api.appspot.com/api/facts')
+
+function refreshObject () {
+  obj = null
+  obj = $.get('http://catfacts-api.appspot.com/api/facts')
+  return obj
+}
+
+function catFactAlertMessages(){
+  respText = obj.responseText
+  fact = JSON.parse(respText).facts[0]
+  return fact
 };
 
+
 chrome.alarms.onAlarm.addListener(function(alarm){
-  message()
-});
-
-
-// test for message function
-  jQuery.get('http://catfacts-api.appspot.com/api/facts', 
-    function(data, success, object){
-    return object.responseText
-    });
+  alert(catFactAlertMessages()); 
+  refreshObject();
+  });
