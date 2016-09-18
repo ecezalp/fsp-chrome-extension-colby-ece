@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 chrome.alarms.onAlarm.addListener(function(alarm){
-  alert(catFactAlertMessages()); 
+  alert(catFactAlertMessages());
   refreshObject();
 });
 
@@ -30,10 +30,3 @@ function catFactAlertMessages(){
   fact = JSON.parse(respText).facts[0]
   return fact
 };
-
-
-
-
-
-
-
