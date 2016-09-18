@@ -5,6 +5,12 @@
 //stackoverflow2: http://stackoverflow.com/questions/10290160/chrome-tabs-executescript-only-fires-when-the-developer-console-is-open
 
 
+
+
+// potential functionalities to be added: prompt() user to set popup interval 
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
   var goButton = document.getElementById('get-alert');
   var stopButton = document.getElementById('stop-alert');
