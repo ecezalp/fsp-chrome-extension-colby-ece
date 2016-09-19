@@ -1,23 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var goButton = document.getElementById('get-alert');
-  var stopButton = document.getElementById('stop-alert');
 
-  goButton.addEventListener('click', function() {
-    chrome.alarms.create("cat facts", {periodInMinutes: 15})
-  });
+  var testButton = $('#test-alert');
+  var obj = $.get('http://catfacts-api.appspot.com/api/facts')
 
-  stopButton.addEventListener('click', function() {
+  localStorage.getItem("button") ? testButton.val(localStorage.getItem("button")) : localStorage.setItem("button", "I thirst for Knowledge!") 
+
+  testButton.click(function() {
+    
+    if (localStorage.getItem("button") === "I thirst for Knowledge!") {
+      chrome.alarms.create("cat facts", {periodInMinutes: 0.08})
+      toggleStorageAndButton()
+    }
+
+    else if (localStorage.getItem("button") === "Make it stop!") {
     chrome.alarms.clear("cat facts")
+    toggleStorageAndButton()
+    }
   });
 
-});
+  function toggleStorageAndButton () {
+    if (localStorage.getItem("button") === "I thirst for Knowledge!") {
+      localStorage.setItem("button", "Make it stop!")
+      testButton.attr("value", "Make it stop!")
+    }
+    else if (localStorage.getItem("button") === "Make it stop!") {
+      localStorage.setItem("button", "I thirst for Knowledge!")
+      testButton.attr("value", "I thirst for Knowledge!")
+    }
+  }
 
-chrome.alarms.onAlarm.addListener(function(alarm){
+  chrome.alarms.onAlarm.addListener(function(alarm){
   alert(catFactAlertMessages());
   refreshObject();
-});
-
-  var obj = $.get('http://catfacts-api.appspot.com/api/facts')
+  });
 
   function refreshObject () {
   obj = null
@@ -25,8 +40,9 @@ chrome.alarms.onAlarm.addListener(function(alarm){
   return obj
 }
 
-function catFactAlertMessages(){
+  function catFactAlertMessages(){
   respText = obj.responseText
   fact = JSON.parse(respText).facts[0]
   return fact
-};
+  }
+});
