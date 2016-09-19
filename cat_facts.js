@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var stopButton = document.getElementById('stop-alert');
 
   goButton.addEventListener('click', function() {
-    chrome.alarms.create("cat facts", {periodInMinutes: 0.08})
+    chrome.alarms.create("cat facts", {periodInMinutes: 15})
   });
 
   stopButton.addEventListener('click', function() {
