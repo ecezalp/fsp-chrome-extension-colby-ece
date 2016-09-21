@@ -15,5 +15,8 @@
   "permissions": [
     "alarms",
     "http://catfacts-api.appspot.com/*"
-  ]
+  ],
+  "icons": {
+    "128": "assets/images/icon128.png"
+  }
 }
