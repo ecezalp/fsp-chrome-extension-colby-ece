@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // fact listener
   factButton.click(function() {
     if (localStorage.getItem("button") === "I thirst for knowledge!") {
-      chrome.alarms.create("cat facts", {periodInMinutes: .08})
+      chrome.alarms.create("cat facts", {periodInMinutes: 15})
       toggleStorageAndFacts()
     }
     else if (localStorage.getItem("button") === "Make it stop!") {
