@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   testButton.click(function() {
 
     if (localStorage.getItem("button") === "I thirst for knowledge!") {
-      chrome.alarms.create("cat facts", {periodInMinutes: .09})
+      chrome.alarms.create("cat facts", {periodInMinutes: 15})
       toggleStorageAndButton()
     }
 
